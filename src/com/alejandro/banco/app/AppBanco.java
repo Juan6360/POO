@@ -6,8 +6,8 @@ public class AppBanco {
     public static void main(String[] args) {
         // Creacion de un objeto
         CuentaBancaria miCuenta = new CuentaBancaria("1234-45");
-        CuentaBancaria vanessaCuenta = new CuentaBancaria("12345");
-
+        //CuentaBancaria vanessaCuenta = new CuentaBancaria("12345");
+        //Hi
         System.out.println("Numero de cuenta: " + miCuenta.numero);
 
         /*miCuenta.consignar(1000000);
