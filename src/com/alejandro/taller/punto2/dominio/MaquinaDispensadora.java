@@ -5,14 +5,20 @@ import java.util.List;
 
 public class MaquinaDispensadora {
 
-    public static final int CAPACIDAD = 12;
-    private List<Snack> snacks;
+    //Atributos
+    public static final int CAPACIDAD = 12; //Valor constante de la capacidad de la maquina dispensadora
+    private List<Snack> snacks; //Lista de tipo Snack que almacena los snacks
 
-    public MaquinaDispensadora(){ this.snacks = new ArrayList<>(); }
+    //Constructor
+    public MaquinaDispensadora(){ this.snacks = new ArrayList<>(); } //Inicializa el atributo snacks cuando una nueva instancia de la clase es creada
 
+    //Metodos
+
+    //Funcion encargada de crear snacks
     public void agregarUnSnack(String nombre, String codigo, int precio, int cantidad){
-        Snack nuevoSnack = new Snack(nombre, codigo, precio, cantidad);
+        Snack nuevoSnack = new Snack(nombre, codigo, precio, cantidad); //Creacion de un nuevo snack en la variable nuevoSnack
 
+        //Revisa si la capacida de la maquina esta en su limite
         if(this.snacks.size() < CAPACIDAD){
             this.snacks.add(nuevoSnack);
         } else {
