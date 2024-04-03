@@ -11,12 +11,18 @@ public class AppMaquinaDispensadora {
         MaquinaDispensadora maquinaDispensadora = new MaquinaDispensadora(); //Creación de una instancia de la clase MaquinaDispensadora
 
         maquinaDispensadora.agregarUnSnack("Hershey's", "A001", 1200, 6);
-        maquinaDispensadora.agregarUnSnack("Hershey's", "A001", 1200, 1);
+        maquinaDispensadora.agregarUnSnack("M&M", "A002", 1200, 2);
 
-        List<Snack> listaStock = maquinaDispensadora.snacksEnStock();
-        listaStock.forEach(snack -> System.out.println(snack.getNombre() + '\n' +
-                                                        snack.getCodigo() + '\n' +
-                                                        snack.getPrecio() + '\n' +
-                                                        snack.getCantidad()));
+        maquinaDispensadora.imprimirSnacksEnStock();
+
+        maquinaDispensadora.sacarSnackPorNombre("M&M", 1);
+        maquinaDispensadora.imprimirSnacksEnStock();
+
+        maquinaDispensadora.sacarSnackPorCodigo("A002", 1);
+        maquinaDispensadora.imprimirSnacksEnStock();
+
+        maquinaDispensadora.aumentarSnackPorCodigo("A002", 2);
+        maquinaDispensadora.imprimirSnacksEnStock();
+
     }
 }

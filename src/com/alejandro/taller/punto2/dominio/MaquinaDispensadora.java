@@ -2,6 +2,7 @@ package com.alejandro.taller.punto2.dominio;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MaquinaDispensadora {
 
@@ -27,12 +28,54 @@ public class MaquinaDispensadora {
         }
     }
 
-    public void sacarSnackPorNombre(String nombre, int cantidad){
+    public Snack buscarSnackPorNombre(String nombre){
+        Snack snackBuscado=null;
 
+        for(int i=0; i<this.snacks.size(); i++){
+            if(this.snacks.get(i).getNombre().equals(nombre)){
+                snackBuscado = this.snacks.get(i);
+                break;
+            }
+        }
+
+        return snackBuscado;
     }
 
-    public void agregarSnackPorCodigo(String codigo, int cantidad){
+    public Snack buscarSnackPorCodigo(String codigo){
+        Snack snackBuscado=null;
 
+        for(int i=0; i<this.snacks.size(); i++){
+            if(this.snacks.get(i).getCodigo().equals(codigo)){
+                snackBuscado = this.snacks.get(i);
+                break;
+            }
+        }
+
+        return snackBuscado;
+    }
+
+    public void sacarSnackPorNombre(String nombre, int cantidadDeseada){
+        Snack snackElegido=buscarSnackPorNombre(nombre);
+
+        int viejaCantidad=snackElegido.getCantidad();
+
+        snackElegido.setCantidad(viejaCantidad-cantidadDeseada);
+    }
+
+    public void sacarSnackPorCodigo(String codigo, int cantidadDeseada){
+        Snack snackElegido = buscarSnackPorCodigo(codigo);
+
+        int viejaCantidad=snackElegido.getCantidad();
+
+        snackElegido.setCantidad(viejaCantidad-cantidadDeseada);
+    }
+
+    public void aumentarSnackPorCodigo(String codigo, int cantidadAAumentar){
+        Snack snackElegido = buscarSnackPorCodigo(codigo);
+
+        int viejaCantidad=snackElegido.getCantidad();
+
+        snackElegido.setCantidad(viejaCantidad+cantidadAAumentar);
     }
 
     public Snack unidadesDeSnack(String nombre, String codigo){
@@ -46,6 +89,14 @@ public class MaquinaDispensadora {
     public List<Snack> snacksEnStock(){
 
         return snacks.stream().filter(snack -> snack.getCantidad() > 0).toList();
+    }
+
+    public void imprimirSnacksEnStock(){
+        List<Snack> listaStock=snacksEnStock();
+        listaStock.forEach(snack -> System.out.println(snack.getNombre() + '\n' +
+                                                        snack.getCodigo() + '\n' +
+                                                        snack.getPrecio() + '\n' +
+                                                        snack.getCantidad() + '\n'));
     }
 
     public List<Snack> ordenarSnacksDescend(){
