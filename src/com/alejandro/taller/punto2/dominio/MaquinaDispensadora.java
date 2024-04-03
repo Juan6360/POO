@@ -23,15 +23,16 @@ public class MaquinaDispensadora {
             this.snacks.add(nuevoSnack);
         } else {
             System.out.println("Maquina llena.");
+            System.out.println(" ");
         }
     }
 
-    public Snack sacarSnackPorNombre(String nombre, int cantidad){
-        return null;
+    public void sacarSnackPorNombre(String nombre, int cantidad){
+
     }
 
-    public Snack agregarSnackPorCodigo(String codigo, int cantidad){
-        return null;
+    public void agregarSnackPorCodigo(String codigo, int cantidad){
+
     }
 
     public Snack unidadesDeSnack(String nombre, String codigo){
@@ -43,7 +44,8 @@ public class MaquinaDispensadora {
     }
 
     public List<Snack> snacksEnStock(){
-        return null;
+
+        return snacks.stream().filter(snack -> snack.getCantidad() > 0).toList();
     }
 
     public List<Snack> ordenarSnacksDescend(){
