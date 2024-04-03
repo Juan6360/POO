@@ -14,4 +14,12 @@ public class Snack {
         this.precio = precio;
         this.cantidad = cantidad;
     }
+
+    public String getNombre() {return nombre;}
+
+    public String getCodigo() {return codigo;}
+
+    public int getPrecio() {return precio;}
+
+    public int getCantidad(){return cantidad;}
 }
