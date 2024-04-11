@@ -1,7 +1,7 @@
-package com.alejandro.taller.punto1.app;
+package com.juan.taller.punto1.app;
 
-import com.alejandro.taller.punto1.dominio.Agenda;
-import com.alejandro.taller.punto1.dominio.Contacto;
+import com.juan.taller.punto1.dominio.Agenda;
+import com.juan.taller.punto1.dominio.Contacto;
 
 import java.util.List;
 

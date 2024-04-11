@@ -1,4 +1,4 @@
-package com.alejandro.banco.dominio;
+package com.juan.banco.dominio;
 
 public class Banco {
     public String nombre;

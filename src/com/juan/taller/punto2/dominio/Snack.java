@@ -1,4 +1,4 @@
-package com.alejandro.taller.punto2.dominio;
+package com.juan.taller.punto2.dominio;
 
 public class Snack {
     //Atributos

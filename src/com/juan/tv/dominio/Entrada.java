@@ -1,4 +1,4 @@
-package com.alejandro.tv.dominio;
+package com.juan.tv.dominio;
 
 public class Entrada {
     // Atributos

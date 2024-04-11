@@ -1,8 +1,7 @@
-package com.alejandro.taller.punto2.dominio;
+package com.juan.taller.punto2.dominio;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class MaquinaDispensadora {
 

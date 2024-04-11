@@ -1,6 +1,6 @@
-package com.alejandro.banco.app;
+package com.juan.banco.app;
 
-import com.alejandro.banco.dominio.CuentaBancaria;
+import com.juan.banco.dominio.CuentaBancaria;
 
 public class AppBanco {
     public static void main(String[] args) {

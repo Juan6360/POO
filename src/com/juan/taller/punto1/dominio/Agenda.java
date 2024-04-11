@@ -1,4 +1,4 @@
-package com.alejandro.taller.punto1.dominio;
+package com.juan.taller.punto1.dominio;
 
 import java.util.ArrayList;
 import java.util.List;

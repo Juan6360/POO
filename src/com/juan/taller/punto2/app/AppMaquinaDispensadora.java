@@ -1,9 +1,6 @@
-package com.alejandro.taller.punto2.app;
+package com.juan.taller.punto2.app;
 
-import com.alejandro.taller.punto2.dominio.MaquinaDispensadora;
-import com.alejandro.taller.punto2.dominio.Snack;
-
-import java.util.List;
+import com.juan.taller.punto2.dominio.MaquinaDispensadora;
 
 public class AppMaquinaDispensadora {
 
