@@ -3,7 +3,9 @@ package com.juan.calculadora.app;
 import com.juan.calculadora.dominio.Calculadora;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class AppCalculadora {
 
@@ -30,26 +32,26 @@ public class AppCalculadora {
                 System.exit(0);
             }
 
-            double numero1 =Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor 1:"));
-            double numero2 =Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor 2:"));
+            String usuario =JOptionPane.showInputDialog("Ingrese su operación: ");
+
             double resultado = 0;
 
             switch (opcionElegida){
 
                 case SUMAR:
-                    resultado = Calculadora.sumar(numero1, numero2);
+                    resultado = Calculadora.sumar(listarDigitos(separacionInput(usuario,"\\+")));
                     break;
 
                 case RESTAR:
-                    resultado = Calculadora.restar(numero1, numero2);
+                    resultado = Calculadora.restar(listarDigitos(separacionInput(usuario,"\\-")));
                     break;
 
                 case MULTIPLICAR:
-                    resultado = Calculadora.multiplicar(numero1, numero2);
+                    resultado = Calculadora.multiplicar(listarDigitos(separacionInput(usuario,"\\*")));
                     break;
 
                 case DIVIDIR:
-                    resultado = Calculadora.dividir(numero1, numero2, redondear);
+                    resultado = Calculadora.dividir(listarDigitos(separacionInput(usuario,"\\/")), redondear);
                     break;
             }
 
@@ -59,5 +61,18 @@ public class AppCalculadora {
 
     private static void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(null, mensaje, "POO - Calculadora", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    private static List<Double> listarDigitos(String[] separacionInput){
+        List<Double> digitos = new ArrayList<>();
+
+        for (String s: separacionInput){
+            double d = Double.parseDouble(s);
+            digitos.add(d);
+        }return digitos;
+    }
+
+    private static String[] separacionInput(String operacion, String operador){
+        return operacion.split(operador);
     }
 }
