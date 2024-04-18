@@ -13,6 +13,10 @@ public class Calculadora {
         return resultado;
     }
 
+    public static double promedio(List<Double> digitos, double resultado){
+        return Math.round(resultado/ digitos.size());
+    }
+
     public static double restar(List<Double> digitos) {
         double resultado = digitos.get(0);
         digitos.remove(resultado);

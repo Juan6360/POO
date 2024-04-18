@@ -35,32 +35,45 @@ public class AppCalculadora {
             String usuario =JOptionPane.showInputDialog("Ingrese su operación: ");
 
             double resultado = 0;
+            double nuevoResultado = 0;
 
             switch (opcionElegida){
 
                 case SUMAR:
                     resultado = Calculadora.sumar(listarDigitos(separacionInput(usuario,"\\+")));
+                    int eleccionPromedio = opcionPromedio("El resultado es: " + resultado + "\n¿Desea conocer el promedio?\n");
+                    if (eleccionPromedio == 0) {
+                        nuevoResultado = Calculadora.promedio(listarDigitos(separacionInput(usuario, "\\+")), resultado);
+                        mostrarMensaje("El promedio es: " + nuevoResultado);
+                    }
                     break;
 
                 case RESTAR:
                     resultado = Calculadora.restar(listarDigitos(separacionInput(usuario,"\\-")));
+                    mostrarMensaje("El resultado es: " + resultado);
                     break;
 
                 case MULTIPLICAR:
                     resultado = Calculadora.multiplicar(listarDigitos(separacionInput(usuario,"\\*")));
+                    mostrarMensaje("El resultado es: " + resultado);
                     break;
 
                 case DIVIDIR:
                     resultado = Calculadora.dividir(listarDigitos(separacionInput(usuario,"\\/")), redondear);
+                    mostrarMensaje("El resultado es: " + resultado);
                     break;
             }
-
-            mostrarMensaje("El resultado es: " + resultado);
         }
     }
 
     private static void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(null, mensaje, "POO - Calculadora", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    private static int opcionPromedio(String mensaje){
+        return JOptionPane.showOptionDialog(null, mensaje, "POO - Calculadora",
+                0, JOptionPane.PLAIN_MESSAGE, null, Arrays.asList("Promedio", "Continuar").toArray()
+                , null);
     }
 
     private static List<Double> listarDigitos(String[] separacionInput){
