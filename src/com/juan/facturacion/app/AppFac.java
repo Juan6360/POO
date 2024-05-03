@@ -1,6 +1,6 @@
 package com.juan.facturacion.app;
 
-import com.alejandro.facturacion.dominio.Facturacion;
+import com.juan.facturacion.dominio.Facturacion;
 
 import java.time.LocalDate;
 
