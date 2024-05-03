@@ -1,11 +1,16 @@
 package com.juan.herencia.dominio;
 
 public class Vehiculo {
-    private String matricula;
+    private String serial;
     private String marca;
     private String modelo;
     private String color;
     private double velocidad;
+
+    public Vehiculo(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+    }
 
     public void acelerar(double incremento) {
         System.out.println("Acelerando vehiculo...");
@@ -43,7 +48,7 @@ public class Vehiculo {
         return marca;
     }
 
-    public String getMatricula() {
-        return matricula;
+    public String getSerial() {
+        return serial;
     }
 }

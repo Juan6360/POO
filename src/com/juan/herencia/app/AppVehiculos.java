@@ -10,11 +10,11 @@ public class AppVehiculos {
     public static void main(String[] args) {
         List<Vehiculo> vehiculos = new ArrayList<>();
 
-        Vehiculo vehiculo = new Vehiculo();
-        Vehiculo cc = new Carro();
-        Taxi taxi = new Taxi();
-        BiciRuta biciRuta = new BiciRuta();
-        Vehiculo bici = new Bicicleta();
+        Vehiculo vehiculo = new Vehiculo("Tesla", "Cybertruck");
+        Vehiculo cc = new Carro("Toyota", "Corola");
+        Taxi taxi = new Taxi("Hyundai", "Accent", "Coopebombas");
+        BiciRuta biciRuta = new BiciRuta("Dogma", "Pinarello");
+        Vehiculo bici = new Bicicleta("Trek", "Marlin 7");
 
         vehiculos.add(vehiculo);
         vehiculos.add(cc);
@@ -34,7 +34,7 @@ public class AppVehiculos {
             }
 
             vehiculo.acelerar(new Random().nextInt(100));
-            System.out.println("El " + vehiculo + " va a " + vehiculo.getVelocidad() + " km/h");
+            System.out.println(vehiculo + " va a " + vehiculo.getVelocidad() + " km/h");
         }
     }
 }
