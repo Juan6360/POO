@@ -26,4 +26,10 @@ public class Facturacion {
     public List<Factura> getFacturas() {
         return facturas;
     }
+
+    public long getTotalFacturacion(){return 0;}
+
+    public Factura getFacturaMasCara(){return null;}
+
+    public List<Factura> getFacturasSinIva(){return null;}
 }
