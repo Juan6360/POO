@@ -17,7 +17,8 @@ public class FacturaConIva extends Factura {
 
     @Override
     protected long calcularTotal() {
-        return valor + calcularIva();
+        valor += calcularIva();
+        return valor;
     }
 
 }
