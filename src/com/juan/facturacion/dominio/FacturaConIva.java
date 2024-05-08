@@ -1,6 +1,7 @@
 package com.juan.facturacion.dominio;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class FacturaConIva extends Factura {
     private double porcIva;
@@ -18,4 +19,5 @@ public class FacturaConIva extends Factura {
     protected long calcularTotal() {
         return valor + calcularIva();
     }
+
 }

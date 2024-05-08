@@ -13,5 +13,9 @@ public abstract class Factura {
         this.fecha = fecha;
     }
 
+    public long getValor() {
+        return valor;
+    }
+
     protected abstract long calcularTotal();
 }
