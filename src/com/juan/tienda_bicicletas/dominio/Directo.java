@@ -10,13 +10,18 @@ public class Directo extends Empleado{
         this.salario = salario;
     }
 
+    // Getters
+    public long getSalario() {
+        return salario;
+    }
+
     // Metodos
-    public long calcularSalud(){return 0;}
+    public long calcularSalud(){return (long) (this.salario * 0.057);}
 
-    public long calcularPension(){return 0;}
+    public long calcularPension(){return (long) (this.salario * 0.065);}
 
-    public long calcularAporte(){return 0;}
+    public long calcularAporte(){return calcularSalud() + calcularPension();}
 
     @Override
-    protected long calcularSalario(){return 0;}
+    protected long calcularSalario(){return salario -= calcularAporte();}
 }

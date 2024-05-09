@@ -9,6 +9,11 @@ public abstract class Empleado{
         this.nombre = nombre;
     }
 
+    // Getters
+    public String getNombre() {
+        return nombre;
+    }
+
     // Metodo
     protected long calcularSalario(){return 0;}
 }

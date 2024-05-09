@@ -11,4 +11,7 @@ public class Freelancer extends Empleado{
         this.valorHora = valorHora;
         this.horasTrabajadas = horasTrabajadas;
     }
+
+    @Override
+    protected long calcularSalario(){return valorHora * horasTrabajadas;}
 }
