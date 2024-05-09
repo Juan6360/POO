@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Nomina {
     // Atributos
-    private List<Empleado> empleados;
+    private List<Empleado> empleados = new ArrayList<>();
 
     // Metodos
     public void calcularNomina(){
