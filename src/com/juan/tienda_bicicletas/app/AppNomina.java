@@ -12,6 +12,7 @@ public class AppNomina {
         Empleado empleado4 = new Vendedor("Claudia", 1380000, 35989000);
         Empleado empleado5 = new Directo("David", 3975000);
         Empleado empleado6 = new Freelancer("Gustavo", 42500, 65);
+        Empleado empleado7 = new Promotor("Gustavo", 2350, 190, 85);
 
         // Adición de los empleados a la lista
         nomina.agregarEmpleado(empleado1);
@@ -20,6 +21,7 @@ public class AppNomina {
         nomina.agregarEmpleado(empleado4);
         nomina.agregarEmpleado(empleado5);
         nomina.agregarEmpleado(empleado6);
+        nomina.agregarEmpleado(empleado7);
 
         // Listado de empleados Directos
         System.out.println(nomina.listarDirectos());
@@ -32,5 +34,8 @@ public class AppNomina {
 
         // Comisiones de los empleaddo
         nomina.comisiones();
+
+        // Listado Promotores
+        System.out.println(nomina.listarPromotores());
     }
 }

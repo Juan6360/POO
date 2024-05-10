@@ -15,5 +15,5 @@ public abstract class Empleado{
     }
 
     // Metodo
-    protected long calcularSalario(){return 0;}
+    abstract long calcularSalario();
 }

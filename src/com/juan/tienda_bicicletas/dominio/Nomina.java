@@ -29,6 +29,10 @@ public class Nomina {
         return this.empleados.stream().filter(e -> e instanceof Freelancer).collect(Collectors.toList());
     }
 
+    public List<Empleado> listarPromotores(){
+        return this.empleados.stream().filter(e -> e instanceof Promotor).collect(Collectors.toList());
+    }
+
     public List<Empleado> empleadosQueComisionan(){
         return this.empleados.stream().filter(e -> e instanceof Vendedor).collect(Collectors.toList());
     }
