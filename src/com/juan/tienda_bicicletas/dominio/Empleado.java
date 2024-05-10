@@ -15,5 +15,5 @@ public abstract class Empleado{
     }
 
     // Metodo
-    abstract long calcularSalario();
+    abstract long calcularSalario(); // Abstract porque se define en las demas clases!
 }
