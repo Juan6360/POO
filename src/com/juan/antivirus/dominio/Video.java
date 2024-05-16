@@ -1,17 +1,12 @@
 package com.juan.antivirus.dominio;
 
-public class Video implements Viruseable {
-    private String nombre;
-    private int calidad;
+public abstract class Video implements Viruseable {
+    protected String nombre;
+    protected int calidad;
 
     public Video(String nombre, int calidad) {
         this.nombre = nombre;
         this.calidad = calidad;
-    }
-
-    @Override
-    public boolean tieneVirus() {
-        return calidad < 1000;
     }
 
     @Override
