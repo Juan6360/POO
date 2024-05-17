@@ -10,10 +10,11 @@ public class Vendedor extends Directo{
         this.ventasDelMes = ventasDelMes;
     }
 
+    // Salario total
     long salario = getSalario();
 
     // Metodos
-    public long calcularComision(){
+    public long calcularComision(){ // Se calcula con el salario base
         if (getSalario() < 1500000){
             return (long) (this.ventasDelMes * 0.045);
         }
