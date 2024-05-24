@@ -9,12 +9,13 @@ import java.util.List;
 public class AppAntivirus {
     public static void main(String[] args) {
         Antivirus avast = new Antivirus();
+        Ventana ventana = new Ventana();
 
         DocumentoWord word1 = new DocumentoWord("hojadevida.docx");
         DocumentoWord word2 = new DocumentoWord("hojadevida☠️.docx");
         DocumentoPDF pdf1 = new DocumentoPDF("hojadevida.pdf");
-        App app1 = new Android("Meta", 10);
-        App app2 = new Ios("Gmail", 16.5);
+        App app1 = new Android("Instagram.playstore", 10);
+        App app2 = new Ios("Instagram.playstore", 16.5);
         Video video1 = new Mp4("miprimeracomunion.mp4", 320);
         Video video2 = new VLC("segundaboda.mp3", 320);
         Ejecutable exe1 = new Windows("IntelliJIDEA", 1.19);
@@ -22,8 +23,16 @@ public class AppAntivirus {
         Audio audio1 = new Mp3("brunomars.mp3", LocalDate.of(2024, 5, 16));
         Audio audio2 = new Flash("projectmanhattan.flash", LocalDate.of(2020, 2, 10));
 
-
         List<Viruseable> elementos = Arrays.asList(word1, word2, pdf1, app1, app2, video1, video2, exe1, exe2, audio1, audio2);
         avast.escanear(elementos);
+
+        //Error Handling
+
+        try{
+            ventana.mostrarMensaje_Movil(app1, "Esta usando un Android.");
+            ventana.mostrarMensaje_Movil(app2, "Esta usando un Ios.");
+        } catch (NonCompOS ex){
+            System.out.println("ERROR -> " + ex.getMessage());
+        }
     }
 }
