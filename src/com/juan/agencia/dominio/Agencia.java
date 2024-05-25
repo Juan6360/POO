@@ -7,7 +7,9 @@ public class Agencia {
     private String nombre;
 
     //Metodos
-    public void agregarInmueble(Inmueble i){}
+    public void agregarInmueble(Inmueble i){
+
+    }
 
     public boolean arrendar(Arrendable inmueble){return false;}
 

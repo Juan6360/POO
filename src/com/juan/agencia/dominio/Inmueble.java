@@ -1,11 +1,15 @@
 package com.juan.agencia.dominio;
 
-public abstract class Inmueble {
+import java.util.ArrayList;
+import java.util.List;
 
+public abstract class Inmueble {
     //Atributos
-    private String direccion;
-    private long valorVenta;
-    private long valorArriendo;
-    private boolean arrendado;
+    protected String direccion;
+    protected long valorVenta;
+    protected long valorArriendo;
+    protected boolean arrendado;
+    protected List<Inmueble> inmuebles = new ArrayList<>();
+
 
 }
