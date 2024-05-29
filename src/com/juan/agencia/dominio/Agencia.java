@@ -21,15 +21,38 @@ public class Agencia {
             return true;
         }else if (inmueble instanceof Apartamento inmubleActual){
             inmubleActual.arrendar();
+            return true;
         }
         return false;
     }
 
-    public boolean devolver(Arrendable inmueble){return false;}
+    public boolean devolver(Arrendable inmueble){
+        if (inmueble instanceof Casa inmuebleActual){
+            inmuebleActual.devolver();
+            return true;
+        }else if (inmueble instanceof Apartamento inmubleActual){
+            inmubleActual.devolver();
+            return true;
+        }
+        return false;
+    }
 
-    public boolean vender(Arrendable inmueble){return false;}
+    public boolean vender(Inmueble inmueble){
+        if (!inmueble.arrendado){
+            this.inmuebles.remove(inmueble);
+            return true;
+        }
 
-    public List<Inmueble> getArrendablesDisponibles(){return null;}
+        System.out.println("Inmueble rentado.");
+
+        return false;
+    }
+
+    public List<Inmueble> getArrendablesDisponibles(){
+        List<Inmueble> arrendablesDisponibles
+
+        return null;
+    }
 
     public List<Inmueble> getArrendados(){return null;}
 }

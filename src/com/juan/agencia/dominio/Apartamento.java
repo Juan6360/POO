@@ -15,12 +15,16 @@ public class Apartamento extends Inmueble implements Arrendable{
         if (!arrendado){
             arrendado = true;
         }else {
-            System.out.println("El Apartamento ya esta rentado");
+            System.out.println("El Apartamento ya esta rentado.");
         }
     }
 
     @Override
     public void devolver() {
-
+        if (arrendado){
+            arrendado = false;
+        }else {
+            System.out.println("El apartamento no se encuentra rentado.");
+        }
     }
 }

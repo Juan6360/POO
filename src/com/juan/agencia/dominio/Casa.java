@@ -10,12 +10,16 @@ public class Casa extends Inmueble implements Arrendable{
         if (!arrendado){
             arrendado = true;
         }else {
-            System.out.println("El Apartamento ya esta rentado");
+            System.out.println("La casa ya esta rentada.");
         }
     }
 
     @Override
     public void devolver() {
-
+        if (arrendado){
+            arrendado = false;
+        }else {
+            System.out.println("La casa no se encuentra rentada.");
+        }
     }
 }
