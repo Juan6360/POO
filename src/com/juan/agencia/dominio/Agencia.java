@@ -2,6 +2,7 @@ package com.juan.agencia.dominio;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Agencia {
     //Atributos
@@ -49,10 +50,10 @@ public class Agencia {
     }
 
     public List<Inmueble> getArrendablesDisponibles(){
-        List<Inmueble> arrendablesDisponibles
-
-        return null;
+        return this.inmuebles.stream().filter(i -> i instanceof Arrendable).collect(Collectors.toList());
     }
 
-    public List<Inmueble> getArrendados(){return null;}
+    public List<Inmueble> getArrendados(){
+        return this.inmuebles.stream().filter(i -> i instanceof Arrendable && i.arrendado).collect(Collectors.toList());
+    }
 }

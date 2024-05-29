@@ -18,12 +18,15 @@ public class AppAgencia {
 
         agencia.arrendar((Arrendable) inmueble_1);
 
-        agencia.devolver((Arrendable) inmueble_3);
-
         agencia.arrendar((Arrendable) inmueble_3);
+
+        agencia.devolver((Arrendable) inmueble_3);
 
         agencia.vender(inmueble_2);
 
         System.out.println(inmueble_3.isArrendado());
+
+        System.out.println(agencia.getArrendablesDisponibles());
+        System.out.println(agencia.getArrendados());
     }
 }
