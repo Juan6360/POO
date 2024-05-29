@@ -16,6 +16,5 @@ public abstract class Inmueble {
     }
 
     //Getters
-
     public boolean isArrendado() {return arrendado;}
 }

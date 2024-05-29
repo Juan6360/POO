@@ -7,8 +7,20 @@ public class Apartamento extends Inmueble implements Arrendable{
         super(direccion, valorVenta, valorArriendo, arrendado);
     }
 
-    //Getters
+    @Override
+    public String toString(){
+        String estado = null;
+        if (arrendado){
+            estado = "Arrendada";
+        }else {
+            estado = "Disponible";
+        }
 
+        return "Dirección: " + direccion + "\n" +
+                "Valor de venta: " + valorVenta + "\n" +
+                "Valor de arriendo: " + valorArriendo + "\n" +
+                "Estado: " + estado;
+    }
 
     @Override
     public void arrendar() {
