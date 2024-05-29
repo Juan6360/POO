@@ -17,13 +17,18 @@ public class Agencia {
     }
 
     public boolean arrendar(Arrendable inmueble){
-        if (inmueble instanceof Casa inmuebleActual){
-            inmuebleActual.arrendar();
-            return true;
-        }else if (inmueble instanceof Apartamento inmubleActual){
-            inmubleActual.arrendar();
-            return true;
+        try{
+            if (inmueble instanceof Casa inmuebleActual){
+                inmuebleActual.arrendar();
+                return true;
+            }else if (inmueble instanceof Apartamento inmubleActual){
+                inmubleActual.arrendar();
+                return true;
+            }
+        }catch (ArrendadoException ae){
+            System.out.println("ERROR -> " + ae.getMessage());
         }
+
         return false;
     }
 
@@ -55,5 +60,10 @@ public class Agencia {
 
     public List<Inmueble> getArrendados(){
         return this.inmuebles.stream().filter(i -> i instanceof Arrendable && i.arrendado).collect(Collectors.toList());
+    }
+
+    public void printArrendables(){
+        List<Inmueble> arrendables = getArrendablesDisponibles();
+        arrendables.forEach(System.out::println);
     }
 }

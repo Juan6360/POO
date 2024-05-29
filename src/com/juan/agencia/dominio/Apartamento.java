@@ -19,15 +19,15 @@ public class Apartamento extends Inmueble implements Arrendable{
         return "Dirección: " + direccion + "\n" +
                 "Valor de venta: " + valorVenta + "\n" +
                 "Valor de arriendo: " + valorArriendo + "\n" +
-                "Estado: " + estado;
+                "Estado: " + estado + "\n";
     }
 
     @Override
     public void arrendar() {
-        if (!arrendado){
-            arrendado = true;
+        if (arrendado){
+            throw new ArrendadoException("El apartamento ya se encuentra rentado.");
         }else {
-            System.out.println("El Apartamento ya esta rentado.");
+            arrendado = true;
         }
     }
 
